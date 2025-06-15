@@ -20,6 +20,7 @@ export default {
 		},
 		extend: {
 			colors: {
+				'hover-background': 'hsl(var(--hover-background))',
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
