@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe, Users, Clock } from 'lucide-react';
 
@@ -13,15 +12,7 @@ const HeroSection = () => {
               <h1 className="leading-tight">
                 <span className="block text-8xl lg:text-9xl font-black text-foreground">
                   hi my name is{' '}
-                  <span className="relative inline-block">
-                    <span className="relative z-10 text-orange-500">Paardhiv Reddy</span>
-                    <img
-                      src="/lovable-uploads/fcec2447-691c-41d1-8e16-8302f36d3b8e.png"
-                      alt="background design"
-                      className="absolute inset-0 w-full h-full object-contain pointer-events-none mix-blend-lighten"
-                      style={{ transform: 'scale(1.5) rotate(-2deg)' }}
-                    />
-                  </span>
+                  <span className="text-orange-500">Paardhiv Reddy</span>
                 </span>
                 <br />
                 <span className="font-light text-foreground text-3xl lg:text-4xl">
