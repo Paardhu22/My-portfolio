@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Globe, Users, Clock } from 'lucide-react';
 
@@ -26,14 +27,7 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {['github', 'linkedin', 'twitter', 'email'].map((social) => (
-                <div key={social} className="w-12 h-12 rounded-full border-2 border-gray-300 flex items-center justify-center hover:border-orange-500 transition-colors cursor-pointer">
-                  <span className="text-sm font-medium text-gray-600">{social.slice(0, 2)}</span>
-                </div>
-              ))}
-            </div>
+            {/* Removed Social Links */}
 
             {/* Stats */}
             <div className="flex space-x-12">
@@ -94,3 +88,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
