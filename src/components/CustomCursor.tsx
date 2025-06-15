@@ -1,5 +1,4 @@
 
-```tsx
 import React, { useState, useEffect, useRef } from 'react';
 
 const CustomCursor = () => {
@@ -64,4 +63,3 @@ const CustomCursor = () => {
 };
 
 export default CustomCursor;
-```
