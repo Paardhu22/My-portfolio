@@ -61,17 +61,21 @@ const SkillsSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-7xl font-black mb-6">
+          <h2 className="text-6xl lg:text-7xl font-black mb-6 opacity-0 animate-fade-in" style={{ animationDelay: '100ms' }}>
             skills • skills • skills •
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '200ms' }}>
             A comprehensive toolkit for modern web development, from concept to deployment
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {skills.map((skillGroup, index) => (
-            <div key={index} className="group">
+            <div 
+              key={index} 
+              className="group opacity-0 animate-fade-in"
+              style={{ animationDelay: `${300 + index * 150}ms` }}
+            >
               <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 h-full flex flex-col">
                 <div className={`${skillGroup.color} w-16 h-16 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform`}>
                   {skillGroup.icon}
@@ -99,7 +103,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-20 text-center">
+        <div className="mt-20 text-center opacity-0 animate-fade-in" style={{ animationDelay: `${300 + skills.length * 150}ms` }}>
           <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-8 py-4">
             <span className="text-orange-500 font-medium">Always learning, always growing</span>
           </div>
