@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe, Users, Clock } from 'lucide-react';
 
@@ -10,7 +9,7 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4 relative">
-              <div className="absolute top-[-10rem] left-[-15rem] w-[45rem] h-[45rem] text-fuchsia-300 opacity-30 filter blur-3xl transform rotate-12 -z-10 pointer-events-none">
+              <div className="absolute top-[-10rem] left-[-15rem] w-[45rem] h-[45rem] text-red-300 opacity-30 filter blur-3xl transform rotate-12 -z-10 pointer-events-none">
                 <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                   <path
                     fill="currentColor"
