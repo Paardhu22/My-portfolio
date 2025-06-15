@@ -79,12 +79,6 @@ const PortfolioSection = () => {
             </a>
           ))}
         </div>
-
-        <div className="text-center mt-16">
-          <button className="bg-orange-500 text-white px-8 py-4 rounded-full font-medium hover:bg-orange-600 transition-colors">
-            View All Projects
-          </button>
-        </div>
       </div>
     </section>
   );
