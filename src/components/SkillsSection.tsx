@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Code, Database, Palette, Zap } from 'lucide-react';
+import { Code, Database, Palette, Zap, Heart, BrainCircuit } from 'lucide-react';
 
 const SkillsSection = () => {
   const skills = [
@@ -34,7 +34,6 @@ const SkillsSection = () => {
       skills: [
         { name: 'Figma', slug: 'figma' },
         { name: 'Framer', slug: 'framer' },
-        { name: 'Adobe XD', slug: 'adobexd' },
       ],
       color: 'bg-purple-500'
     },
@@ -43,8 +42,8 @@ const SkillsSection = () => {
       icon: <Zap className="w-8 h-8" />,
       skills: [
         { name: 'OpenAI', slug: 'openai' },
-        { name: 'LangChain', slug: 'langchain' },
-        { name: 'Vercel', slug: 'vercel' },
+        { name: 'Lovable', icon: <Heart className="w-8 h-8 text-red-500" /> },
+        { name: 'Prompt Engineering', icon: <BrainCircuit className="w-8 h-8" /> },
       ],
       color: 'bg-orange-500'
     }
@@ -87,11 +86,17 @@ const SkillsSection = () => {
                   <div className="flex flex-wrap gap-x-4 gap-y-6 justify-center w-full">
                     {skillGroup.skills.map((skill, skillIndex) => (
                       <div key={skillIndex} className="flex flex-col items-center gap-2 w-16" title={skill.name}>
-                        <img 
-                          src={`https://cdn.simpleicons.org/${skill.slug}/white`} 
-                          alt={`${skill.name} logo`}
-                          className="w-8 h-8"
-                        />
+                        <div className="w-8 h-8 flex items-center justify-center">
+                          {'slug' in skill && skill.slug ? (
+                            <img 
+                              src={`https://cdn.simpleicons.org/${skill.slug}/white`} 
+                              alt={`${skill.name} logo`}
+                              className="w-8 h-8"
+                            />
+                          ) : (
+                            'icon' in skill && skill.icon
+                          )}
+                        </div>
                         <span className="text-xs text-gray-400 text-center">{skill.name}</span>
                       </div>
                     ))}
