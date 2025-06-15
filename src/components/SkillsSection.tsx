@@ -25,7 +25,7 @@ const SkillsSection = () => {
     {
       category: 'AI & Automation',
       icon: <Zap className="w-8 h-8" />,
-      skills: ['Prompt Engineering', 'AI Integration', 'Automation', 'Optimization'],
+      skills: ['Prompt Engineering', 'AI Integration', 'Automation', 'Code Optimization'],
       color: 'bg-orange-500'
     }
   ];
