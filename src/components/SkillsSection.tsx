@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Code, Database, Palette, Zap, Heart, BrainCircuit } from 'lucide-react';
 
@@ -59,8 +60,8 @@ const SkillsSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-7xl font-black mb-6 opacity-0 animate-fade-in bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]" style={{ animationDelay: '100ms' }}>
-            skills • skills • skills •
+          <h2 className="text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]">
+            skills • skills • skills
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '200ms' }}>
             A comprehensive toolkit for modern web development, from concept to deployment
