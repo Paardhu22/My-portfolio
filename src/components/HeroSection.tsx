@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Globe, Linkedin, Github, Layers, Code, Server, Database, Palette, Instagram } from 'lucide-react';
 
@@ -35,7 +36,7 @@ const HeroSection = () => {
               <a href="https://github.com/Paardhu22" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
                 <Github className="w-7 h-7" />
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
+              <a href="https://www.instagram.com/not.paardhu/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
                 <Instagram className="w-7 h-7" />
               </a>
             </div>
