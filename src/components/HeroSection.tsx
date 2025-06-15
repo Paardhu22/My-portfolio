@@ -4,12 +4,22 @@ import { Globe, Users, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen bg-gray-50 pt-20 overflow-hidden">
+    <section id="home" className="min-h-screen bg-gray-50 pt-20">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="space-y-4">
+            <div className="space-y-4 relative">
+              <div className="absolute top-[-10rem] left-[-15rem] w-[45rem] h-[45rem] text-fuchsia-300 opacity-30 filter blur-3xl transform rotate-12 -z-10 pointer-events-none">
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill="currentColor"
+                    d="M49.4,-49.5C62.4,-34.2,70.1,-17.1,70.6,0.5C71.1,18.1,64.4,36.2,52.2,49.2C40,62.2,22.3,70.1,3.8,70.8C-14.7,71.5,-29.3,65,-43,54.7C-56.7,44.4,-69.5,30.3,-72.6,14C-75.7,-2.2,-69.1,-18.4,-59,-33.5C-48.9,-48.6,-35.2,-62.5,-20.3,-67.4C-5.3,-72.3,10.8,-67.7,24.9,-61.7C39,-55.7,51.1,-48.5,49.4,-49.5Z"
+                    transform="translate(100 100)"
+                  />
+                </svg>
+              </div>
+
               <h1 className="leading-tight">
                 <span className="block text-8xl lg:text-9xl font-black text-black">
                   hi my name is <span className="text-orange-500">Paardhiv Reddy</span>
@@ -88,4 +98,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-
