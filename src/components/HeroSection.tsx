@@ -11,17 +11,17 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4 relative">
               <h1 className="leading-tight">
-                <span className="block text-8xl lg:text-9xl font-black text-foreground">
+                <span className="block text-8xl lg:text-9xl font-black text-foreground opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
                   hi my name is{' '}
-                  <span className="text-orange-500">Paardhiv Reddy</span>
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 animate-text-gradient bg-[200%_auto]">Paardhiv Reddy</span>
                 </span>
                 <br />
-                <span className="font-light text-foreground text-3xl lg:text-4xl">
+                <span className="font-light text-foreground text-3xl lg:text-4xl block opacity-0 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                   and welcome to my portfolio
                 </span>
               </h1>
               
-              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed opacity-0 animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 Welcome to a digital journey that transcends boundaries. 
                 Discover the artistry of code brought to life through 
                 innovative web development and creative problem-solving.
@@ -29,7 +29,7 @@ const HeroSection = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-6 opacity-0 animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <a href="https://www.linkedin.com/in/paardhiv-reddy-tumma" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
                 <Linkedin className="w-7 h-7" />
               </a>
@@ -42,7 +42,7 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex space-x-12">
+            <div className="flex space-x-12 opacity-0 animate-fade-in" style={{ animationDelay: '1s' }}>
               <div>
                 <div className="text-4xl font-bold text-foreground">+15</div>
                 <div className="text-sm text-muted-foreground">Projects completed with precision and creativity</div>
@@ -55,7 +55,7 @@ const HeroSection = () => {
           </div>
 
           {/* Right Content - Featured Card */}
-          <div className="relative">
+          <div className="relative opacity-0 animate-fade-in" style={{ animationDelay: '0.5s' }}>
             <div className="bg-orange-500 rounded-3xl p-8 relative overflow-hidden animate-float">
               <div className="absolute top-4 right-4">
                 <Globe className="w-6 h-6 text-white" />
