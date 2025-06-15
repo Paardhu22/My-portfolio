@@ -54,7 +54,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={followerRef}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] w-32 h-32 rounded-full bg-orange-500/20 blur-3xl"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] w-32 h-32 rounded-full bg-cyan-400/30 blur-3xl"
       style={{
         transform: 'translate3d(-100px, -100px, 0) translate(-50%, -50%)',
       }}
