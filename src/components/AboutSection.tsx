@@ -22,9 +22,14 @@ const AboutSection = () => {
               </p>
             </div>
 
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold text-foreground">What I Do</h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-6 text-center">
+              <h3 
+                className="text-4xl font-bold text-foreground mb-6 animate-fade-in" 
+                style={{ animationDelay: '200ms', opacity: 0 }}
+              >
+                What I Do
+              </h3>
+              <div className="flex flex-wrap justify-center gap-4">
                 {[
                   'Frontend Development',
                   'Backend Architecture',
@@ -33,9 +38,13 @@ const AboutSection = () => {
                   'API Development',
                   'Performance Optimization'
                 ].map((item, index) => (
-                  <div key={index} className="flex items-center space-x-3">
+                  <div
+                    key={index}
+                    className="flex items-center space-x-3 bg-foreground/5 py-2 px-4 rounded-full animate-fade-in"
+                    style={{ animationDelay: `${300 + index * 100}ms`, opacity: 0 }}
+                  >
                     <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                    <span className="text-foreground">{item}</span>
+                    <span className="text-foreground font-medium">{item}</span>
                   </div>
                 ))}
               </div>
