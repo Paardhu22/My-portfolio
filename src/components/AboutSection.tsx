@@ -1,17 +1,24 @@
 
 import React from 'react';
+import { useInView } from '../hooks/useInView';
+import { cn } from '@/lib/utils';
 
 const AboutSection = () => {
+  const [ref, isInView] = useInView<HTMLElement>({ triggerOnce: true, threshold: 0.1 });
+
   return (
-    <section id="about" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
+    <section ref={ref} id="about" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
       <div className="container mx-auto px-6">
-        <h2 className="text-6xl lg:text-7xl font-black mb-12 text-center leading-none bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]">
+        <h2 className={cn(
+          "text-6xl lg:text-7xl font-black mb-12 text-center leading-none bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]",
+          isInView ? 'animate-fade-in' : 'opacity-0'
+        )}>
           about • about • about
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div>
+            <div className={cn(isInView ? 'animate-fade-in' : 'opacity-0')} style={{ animationDelay: '200ms' }}>
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
                 I'm a passionate full-stack developer with a keen eye for design and a love for clean, efficient code. 
                 My journey spans from crafting pixel-perfect frontends to architecting robust backend systems.
@@ -24,8 +31,11 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-center">
               <h3 
-                className="text-5xl font-bold text-foreground mb-6 animate-fade-in animate-pulse-scale" 
-                style={{ animationDelay: '200ms', opacity: 0 }}
+                className={cn(
+                  "text-5xl font-bold text-foreground mb-6 animate-pulse-scale",
+                  isInView ? "animate-fade-in" : "opacity-0"
+                )} 
+                style={{ animationDelay: '400ms' }}
               >
                 What I Do
               </h3>
@@ -40,8 +50,11 @@ const AboutSection = () => {
                 ].map((item, index) => (
                   <div
                     key={index}
-                    className="flex items-center space-x-3 bg-foreground/5 py-2 px-4 rounded-full animate-fade-in"
-                    style={{ animationDelay: `${300 + index * 100}ms`, opacity: 0 }}
+                    className={cn(
+                      "flex items-center space-x-3 bg-foreground/5 py-2 px-4 rounded-full",
+                      isInView ? "animate-fade-in" : "opacity-0"
+                    )}
+                    style={{ animationDelay: `${500 + index * 100}ms` }}
                   >
                     <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
                     <span className="text-foreground font-medium">{item}</span>
@@ -52,7 +65,7 @@ const AboutSection = () => {
           </div>
 
           {/* Right Content - Visual Elements */}
-          <div className="relative">
+          <div className={cn("relative", isInView ? 'animate-fade-in' : 'opacity-0')} style={{ animationDelay: '300ms' }}>
             <div className="relative">
               {/* Main circle with photographer */}
               <div className="w-80 h-80 bg-foreground/10 rounded-full relative overflow-hidden mx-auto">

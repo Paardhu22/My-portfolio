@@ -1,8 +1,11 @@
 
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
+import { cn } from '@/lib/utils';
 
 const PortfolioSection = () => {
+  const [ref, isInView] = useInView<HTMLElement>({ triggerOnce: true, threshold: 0.1 });
   const projects = [
     {
       title: 'Cyber Edu Genius',
@@ -28,13 +31,19 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
+    <section ref={ref} id="portfolio" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-7xl font-black text-foreground mb-6">
+          <h2 className={cn(
+            "text-6xl lg:text-7xl font-black text-foreground mb-6",
+            isInView ? "animate-fade-in" : "opacity-0"
+          )}>
             Projects showcase
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className={cn(
+            "text-xl text-muted-foreground max-w-2xl mx-auto",
+            isInView ? "animate-fade-in" : "opacity-0"
+          )} style={{ animationDelay: '200ms' }}>
             Selected works that showcase technical expertise and creative problem-solving
           </p>
         </div>
@@ -46,7 +55,11 @@ const PortfolioSection = () => {
               href={project.link} 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="group block"
+              className={cn(
+                "group block",
+                isInView ? "animate-fade-in" : "opacity-0"
+              )}
+              style={{ animationDelay: `${300 + index * 200}ms` }}
             >
               <div className="bg-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
                 <div className="relative overflow-hidden">

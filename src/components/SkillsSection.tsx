@@ -1,8 +1,12 @@
 
 import React from 'react';
 import { Code, Database, Palette, Zap, Heart, BrainCircuit } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
+import { cn } from '@/lib/utils';
 
 const SkillsSection = () => {
+  const [ref, isInView] = useInView<HTMLElement>({ triggerOnce: true, threshold: 0.1 });
+
   const skills = [
     {
       category: 'Frontend',
@@ -50,7 +54,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-[#111] text-white relative overflow-hidden transition-colors duration-300 hover:bg-black">
+    <section ref={ref} id="skills" className="py-20 bg-[#111] text-white relative overflow-hidden transition-colors duration-300 hover:bg-black">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white/10 rounded-full animate-rotate-slow"></div>
@@ -60,10 +64,16 @@ const SkillsSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]">
+          <h2 className={cn(
+            "text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]",
+            isInView ? 'animate-fade-in' : 'opacity-0'
+            )}>
             skills • skills • skills
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto opacity-0 animate-fade-in" style={{ animationDelay: '200ms' }}>
+          <p className={cn(
+            "text-xl text-gray-300 max-w-2xl mx-auto",
+            isInView ? 'animate-fade-in' : 'opacity-0'
+            )} style={{ animationDelay: '200ms' }}>
             A comprehensive toolkit for modern web development, from concept to deployment
           </p>
         </div>
@@ -72,7 +82,10 @@ const SkillsSection = () => {
           {skills.map((skillGroup, index) => (
             <div 
               key={index} 
-              className="group opacity-0 animate-fade-in"
+              className={cn(
+                "group",
+                isInView ? 'animate-fade-in' : 'opacity-0'
+                )}
               style={{ animationDelay: `${300 + index * 150}ms` }}
             >
               <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 h-full flex flex-col">
@@ -108,7 +121,7 @@ const SkillsSection = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-20 text-center opacity-0 animate-fade-in" style={{ animationDelay: `${300 + skills.length * 150}ms` }}>
+        <div className={cn("mt-20 text-center", isInView ? 'animate-fade-in' : 'opacity-0')} style={{ animationDelay: `${300 + skills.length * 150}ms` }}>
           <div className="inline-block bg-white/10 backdrop-blur-sm rounded-full px-8 py-4">
             <span className="text-orange-500 font-medium">Always learning, always growing</span>
           </div>

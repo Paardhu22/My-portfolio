@@ -1,10 +1,14 @@
 
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useInView } from '../hooks/useInView';
+import { cn } from '@/lib/utils';
 
 const ContactSection = () => {
+  const [ref, isInView] = useInView<HTMLElement>({ triggerOnce: true, threshold: 0.2 });
+
   return (
-    <section id="contact" className="py-20 bg-[#111] text-white relative overflow-hidden transition-colors duration-300 hover:bg-black">
+    <section ref={ref} id="contact" className="py-20 bg-[#111] text-white relative overflow-hidden transition-colors duration-300 hover:bg-black">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-32 h-32 border border-white/10 rounded-full"></div>
@@ -14,15 +18,24 @@ const ContactSection = () => {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-7xl font-black mb-6">
+          <h2 className={cn(
+            "text-6xl lg:text-7xl font-black mb-6",
+            isInView ? "animate-fade-in" : "opacity-0"
+          )}>
             let's work
           </h2>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className={cn(
+            "text-xl text-gray-300 max-w-2xl mx-auto",
+            isInView ? "animate-fade-in" : "opacity-0"
+          )} style={{ animationDelay: '200ms' }}>
             Ready to bring your ideas to life? Let's create something amazing together.
           </p>
         </div>
 
-        <div className="flex justify-center">
+        <div className={cn(
+          "flex justify-center",
+          isInView ? "animate-fade-in" : "opacity-0"
+        )} style={{ animationDelay: '400ms' }}>
           {/* Contact Info */}
           <div className="space-y-8 max-w-xl">
             <div>
