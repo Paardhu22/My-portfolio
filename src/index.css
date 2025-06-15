@@ -104,4 +104,9 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  body.hide-cursor,
+  body.hide-cursor * {
+    cursor: none;
+  }
 }

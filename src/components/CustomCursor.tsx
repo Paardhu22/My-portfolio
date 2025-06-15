@@ -3,12 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const CustomCursor = () => {
   const [isPointerDevice, setIsPointerDevice] = useState(false);
-  const followerRef = useRef<HTMLDivElement>(null);
-
-  const mousePos = useRef({ x: -100, y: -100 });
-  const followerPos = useRef({ x: -100, y: -100 });
-
-  const rafId = useRef<number | null>(null);
+  const [isMouseDown, setIsMouseDown] = useState(false);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const hasPointerDevice = window.matchMedia('(pointer: fine)').matches;
@@ -16,34 +12,26 @@ const CustomCursor = () => {
 
     if (!hasPointerDevice) return;
 
+    document.body.classList.add('hide-cursor');
+
     const onMouseMove = (e: MouseEvent) => {
-      mousePos.current = { x: e.clientX, y: e.clientY };
+      if (cursorRef.current) {
+        cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-50%, -50%)`;
+      }
     };
+
+    const onMouseDown = () => setIsMouseDown(true);
+    const onMouseUp = () => setIsMouseDown(false);
 
     document.addEventListener('mousemove', onMouseMove);
-
-    const animateFollower = () => {
-      const { x: mouseX, y: mouseY } = mousePos.current;
-      const { x: followerX, y: followerY } = followerPos.current;
-
-      // Create a lagging effect
-      followerPos.current.x += (mouseX - followerX) * 0.2;
-      followerPos.current.y += (mouseY - followerY) * 0.2;
-
-      if (followerRef.current) {
-        followerRef.current.style.transform = `translate3d(${followerPos.current.x}px, ${followerPos.current.y}px, 0) translate(-50%, -50%)`;
-      }
-
-      rafId.current = requestAnimationFrame(animateFollower);
-    };
-
-    animateFollower();
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
 
     return () => {
+      document.body.classList.remove('hide-cursor');
       document.removeEventListener('mousemove', onMouseMove);
-      if (rafId.current) {
-        cancelAnimationFrame(rafId.current);
-      }
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mouseup', onMouseUp);
     };
   }, []);
 
@@ -53,8 +41,10 @@ const CustomCursor = () => {
 
   return (
     <div
-      ref={followerRef}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] w-32 h-32 rounded-full bg-cyan-300/40 blur-3xl"
+      ref={cursorRef}
+      className={`fixed top-0 left-0 pointer-events-none z-[9999] w-3 h-3 rounded-full bg-foreground transition-transform duration-200 ease-in-out ${
+        isMouseDown ? 'scale-[2.5]' : 'scale-100'
+      }`}
       style={{
         transform: 'translate3d(-100px, -100px, 0) translate(-50%, -50%)',
       }}
