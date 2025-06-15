@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useInView } from '../hooks/useInView';
 import { cn } from '@/lib/utils';
@@ -7,7 +6,7 @@ const AboutSection = () => {
   const [ref, isInView] = useInView<HTMLElement>({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section ref={ref} id="about" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
+    <section ref={ref} id="about" className="py-20">
       <div className="container mx-auto px-6">
         <h2 className={cn(
           "text-6xl lg:text-7xl font-black mb-12 text-center leading-none bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]",

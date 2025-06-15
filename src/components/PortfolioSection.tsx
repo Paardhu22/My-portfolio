@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ExternalLink } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
@@ -31,7 +30,7 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section ref={ref} id="portfolio" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
+    <section ref={ref} id="portfolio" className="py-20">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={cn(

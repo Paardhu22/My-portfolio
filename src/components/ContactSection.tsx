@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useInView } from '../hooks/useInView';
@@ -8,7 +7,7 @@ const ContactSection = () => {
   const [ref, isInView] = useInView<HTMLElement>({ triggerOnce: true, threshold: 0.2 });
 
   return (
-    <section ref={ref} id="contact" className="py-20 bg-[#111] text-white relative overflow-hidden transition-colors duration-300 hover:bg-black">
+    <section ref={ref} id="contact" className="py-20 text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-32 h-32 border border-white/10 rounded-full"></div>
