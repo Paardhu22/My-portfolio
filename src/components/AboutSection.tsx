@@ -5,13 +5,13 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
       <div className="container mx-auto px-6">
+        <h2 className="text-6xl lg:text-7xl font-black text-foreground mb-12 text-center leading-none">
+          about • about • about •
+        </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div>
-              <h2 className="text-6xl lg:text-7xl font-black text-foreground mb-6 leading-none">
-                about • about • about •
-              </h2>
               <p className="text-xl text-muted-foreground leading-relaxed mb-6">
                 I'm a passionate full-stack developer with a keen eye for design and a love for clean, efficient code. 
                 My journey spans from crafting pixel-perfect frontends to architecting robust backend systems.
