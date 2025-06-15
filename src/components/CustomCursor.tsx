@@ -27,8 +27,8 @@ const CustomCursor = () => {
       const { x: followerX, y: followerY } = followerPos.current;
 
       // Create a lagging effect
-      followerPos.current.x += (mouseX - followerX) * 0.1;
-      followerPos.current.y += (mouseY - followerY) * 0.1;
+      followerPos.current.x += (mouseX - followerX) * 0.2;
+      followerPos.current.y += (mouseY - followerY) * 0.2;
 
       if (followerRef.current) {
         followerRef.current.style.transform = `translate3d(${followerPos.current.x}px, ${followerPos.current.y}px, 0) translate(-50%, -50%)`;
@@ -54,7 +54,7 @@ const CustomCursor = () => {
   return (
     <div
       ref={followerRef}
-      className="fixed top-0 left-0 pointer-events-none z-[9999] w-32 h-32 rounded-full bg-cyan-400/30 blur-3xl"
+      className="fixed top-0 left-0 pointer-events-none z-[9999] w-32 h-32 rounded-full bg-cyan-300/40 blur-3xl"
       style={{
         transform: 'translate3d(-100px, -100px, 0) translate(-50%, -50%)',
       }}
