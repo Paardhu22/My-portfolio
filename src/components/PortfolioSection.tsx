@@ -39,7 +39,7 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-6xl lg:text-7xl font-black text-foreground mb-6">
-            portfolio
+            Projects showcase
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Selected works that showcase technical expertise and creative problem-solving
