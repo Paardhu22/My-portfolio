@@ -54,7 +54,7 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section ref={ref} id="skills" className="py-20 bg-transparent text-white relative overflow-hidden transition-colors duration-300 hover:bg-black/30">
+    <section ref={ref} id="skills" className="py-20 bg-[#111] text-white relative overflow-hidden transition-colors duration-300 hover:bg-black">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 border-4 border-white/10 rounded-full animate-rotate-slow"></div>

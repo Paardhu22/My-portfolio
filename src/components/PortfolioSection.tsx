@@ -31,7 +31,7 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section ref={ref} id="portfolio" className="py-20 bg-transparent transition-colors duration-300 hover:bg-black/30">
+    <section ref={ref} id="portfolio" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className={cn(
