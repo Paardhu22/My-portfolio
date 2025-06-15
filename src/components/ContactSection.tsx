@@ -35,9 +35,9 @@ const ContactSection = () => {
 
             <div className="space-y-6">
               {[
-                { icon: <Mail className="w-6 h-6" />, label: 'Email', value: 'hello@yourname.com' },
-                { icon: <Phone className="w-6 h-6" />, label: 'Phone', value: '+1 (555) 123-4567' },
-                { icon: <MapPin className="w-6 h-6" />, label: 'Location', value: 'New York, NY' }
+                { icon: <Mail className="w-6 h-6" />, label: 'Email', value: 'paardhivreddy22@gmail.com' },
+                { icon: <Phone className="w-6 h-6" />, label: 'Phone', value: '9493541929' },
+                { icon: <MapPin className="w-6 h-6" />, label: 'Location', value: 'hyd' }
               ].map((item, index) => (
                 <div key={index} className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
