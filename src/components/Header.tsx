@@ -3,15 +3,27 @@ import React, { useState, useEffect } from 'react';
 
 const Header = () => {
   const [hasScrolled, setHasScrolled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
         setHasScrolled(true);
       } else {
         setHasScrolled(false);
       }
+
+      // Hide on scroll down, show on scroll up
+      if (lastScrollY < currentScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -19,7 +31,7 @@ const Header = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [lastScrollY]);
 
   const navLinks = [
     { name: 'About', href: '#about' },
@@ -28,7 +40,11 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 transition-transform duration-300">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 transition-transform duration-300 ${
+        isVisible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
       <nav
         className={`flex items-center transition-all duration-300 ${
           hasScrolled
@@ -36,12 +52,12 @@ const Header = () => {
             : 'bg-transparent'
         }`}
       >
-        <ul className="flex items-center space-x-2 px-3 py-2">
+        <ul className="flex items-center space-x-3 px-4 py-2">
           {navLinks.map((link) => (
             <li key={link.name}>
               <a
                 href={link.href}
-                className="px-4 py-2 text-muted-foreground hover:text-foreground rounded-full transition-colors duration-300 text-sm font-medium"
+                className="px-5 py-3 text-foreground hover:bg-accent rounded-full transition-all duration-300 text-base font-medium"
               >
                 {link.name}
               </a>
