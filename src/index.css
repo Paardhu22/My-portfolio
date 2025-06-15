@@ -1,7 +1,16 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .story-link > a::after {
+    @apply content-[''] absolute w-full h-[2px] bottom-2 left-0 bg-primary scale-x-0 origin-bottom-right transition-transform duration-300 ease-out;
+  }
+
+  .story-link > a:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+}
 
 /* ... keep existing code (root variables) */
 

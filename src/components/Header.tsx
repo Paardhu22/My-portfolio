@@ -54,10 +54,10 @@ const Header = () => {
       >
         <ul className="flex items-center space-x-3 px-4 py-2">
           {navLinks.map((link) => (
-            <li key={link.name}>
+            <li key={link.name} className="story-link">
               <a
                 href={link.href}
-                className="px-5 py-3 text-foreground hover:bg-accent rounded-full transition-all duration-300 text-base font-medium"
+                className="relative inline-block px-5 py-3 text-foreground text-base font-medium"
               >
                 {link.name}
               </a>
