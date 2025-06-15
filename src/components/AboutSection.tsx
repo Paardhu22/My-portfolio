@@ -6,7 +6,7 @@ const AboutSection = () => {
     <section id="about" className="py-20 bg-background transition-colors duration-300 hover:bg-hover-background">
       <div className="container mx-auto px-6">
         <h2 className="text-6xl lg:text-7xl font-black mb-12 text-center leading-none bg-gradient-to-r from-orange-500 via-purple-500 to-blue-500 text-transparent bg-clip-text animate-text-gradient bg-[200%_auto]">
-          about • about • about •
+          about • about • about
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
