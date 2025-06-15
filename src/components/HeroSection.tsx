@@ -10,7 +10,7 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="leading-tight">
-                <span className="block text-7xl lg:text-8xl font-black text-black">
+                <span className="block text-8xl lg:text-9xl font-black text-black">
                   hi my name is <span className="text-orange-500">Paardhiv Reddy</span>
                 </span>
                 <br />
