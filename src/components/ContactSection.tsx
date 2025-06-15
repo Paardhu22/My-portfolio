@@ -50,17 +50,6 @@ const ContactSection = () => {
                 </div>
               ))}
             </div>
-
-            <div className="pt-8">
-              <h4 className="text-xl font-bold mb-4">Follow Me</h4>
-              <div className="flex space-x-4">
-                {['GitHub', 'LinkedIn', 'Twitter', 'Behance'].map((social) => (
-                  <div key={social} className="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center hover:bg-orange-500 transition-colors cursor-pointer">
-                    <span className="text-sm font-medium">{social.slice(0, 2)}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Contact Form */}
