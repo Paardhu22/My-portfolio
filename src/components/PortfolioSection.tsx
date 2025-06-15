@@ -35,13 +35,13 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-gray-50">
+    <section id="portfolio" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-6xl lg:text-7xl font-black text-black mb-6">
+          <h2 className="text-6xl lg:text-7xl font-black text-foreground mb-6">
             portfolio
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Selected works that showcase technical expertise and creative problem-solving
           </p>
         </div>
@@ -49,7 +49,7 @@ const PortfolioSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <div key={index} className="group cursor-pointer">
-              <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
+              <div className="bg-card rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02]">
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
@@ -58,22 +58,22 @@ const PortfolioSection = () => {
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300"></div>
                   <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex space-x-2">
-                    <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                      <ExternalLink className="w-4 h-4 text-black" />
+                    <div className="w-10 h-10 bg-card/90 rounded-full flex items-center justify-center hover:bg-card transition-colors">
+                      <ExternalLink className="w-4 h-4 text-foreground" />
                     </div>
-                    <div className="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-colors">
-                      <Github className="w-4 h-4 text-black" />
+                    <div className="w-10 h-10 bg-card/90 rounded-full flex items-center justify-center hover:bg-card transition-colors">
+                      <Github className="w-4 h-4 text-foreground" />
                     </div>
                   </div>
                 </div>
                 
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-black mb-3">{project.title}</h3>
-                  <p className="text-gray-600 mb-6">{project.description}</p>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{project.title}</h3>
+                  <p className="text-muted-foreground mb-6">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
-                      <span key={tagIndex} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                      <span key={tagIndex} className="px-3 py-1 bg-muted text-muted-foreground rounded-full text-sm font-medium">
                         {tag}
                       </span>
                     ))}

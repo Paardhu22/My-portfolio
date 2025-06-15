@@ -1,16 +1,17 @@
+
 import React from 'react';
 import { Globe, Users, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen bg-gray-50 pt-20">
+    <section id="home" className="min-h-screen bg-background pt-20">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4 relative">
               <h1 className="leading-tight">
-                <span className="block text-8xl lg:text-9xl font-black text-black">
+                <span className="block text-8xl lg:text-9xl font-black text-foreground">
                   hi my name is{' '}
                   <span className="relative inline-block">
                     <span className="relative z-10 text-orange-500">Paardhiv Reddy</span>
@@ -23,12 +24,12 @@ const HeroSection = () => {
                   </span>
                 </span>
                 <br />
-                <span className="font-light text-black text-3xl lg:text-4xl">
+                <span className="font-light text-foreground text-3xl lg:text-4xl">
                   and welcome to my portfolio
                 </span>
               </h1>
               
-              <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
+              <p className="text-lg text-muted-foreground max-w-lg leading-relaxed">
                 Welcome to a digital journey that transcends boundaries. 
                 Discover the artistry of code brought to life through 
                 innovative web development and creative problem-solving.
@@ -40,12 +41,12 @@ const HeroSection = () => {
             {/* Stats */}
             <div className="flex space-x-12">
               <div>
-                <div className="text-4xl font-bold text-black">+15</div>
-                <div className="text-sm text-gray-600">Projects completed with precision and creativity</div>
+                <div className="text-4xl font-bold text-foreground">+15</div>
+                <div className="text-sm text-muted-foreground">Projects completed with precision and creativity</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-black">+500k</div>
-                <div className="text-sm text-gray-600">Lines of code crafted, optimized for performance</div>
+                <div className="text-4xl font-bold text-foreground">+500k</div>
+                <div className="text-sm text-muted-foreground">Lines of code crafted, optimized for performance</div>
               </div>
             </div>
           </div>
