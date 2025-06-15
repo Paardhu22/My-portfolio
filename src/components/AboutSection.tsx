@@ -1,6 +1,4 @@
-
 import React from 'react';
-import { Download, Mail } from 'lucide-react';
 
 const AboutSection = () => {
   return (
@@ -40,17 +38,6 @@ const AboutSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
-
-            <div className="flex space-x-4">
-              <button className="bg-foreground text-background px-6 py-3 rounded-full font-medium hover:bg-muted-foreground transition-colors flex items-center space-x-2">
-                <Download className="w-4 h-4" />
-                <span>Download CV</span>
-              </button>
-              <button className="border-2 border-foreground text-foreground px-6 py-3 rounded-full font-medium hover:bg-foreground hover:text-background transition-colors flex items-center space-x-2">
-                <Mail className="w-4 h-4" />
-                <span>Get in Touch</span>
-              </button>
             </div>
           </div>
 
