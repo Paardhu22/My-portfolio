@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Globe, Users, Clock, Linkedin, Github } from 'lucide-react';
+import { Globe, Linkedin, Github, Layers, Code, Server, Database, Palette } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -61,21 +61,33 @@ const HeroSection = () => {
               <div className="relative z-10">
                 <div className="text-white text-2xl font-bold mb-4">Creative Developer</div>
                 <div className="w-32 h-32 bg-white/20 rounded-2xl mb-6 flex items-center justify-center">
-                  <div className="text-6xl">💻</div>
+                  <Layers className="w-16 h-16 text-white" />
                 </div>
                 
-                <div className="space-y-3">
+                <div className="grid grid-cols-2 gap-4">
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <Users className="w-4 h-4 text-white" />
+                      <Code className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-white text-sm">Frontend & Backend</span>
+                    <span className="text-white text-sm">Frontend</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
-                      <Clock className="w-4 h-4 text-white" />
+                      <Server className="w-4 h-4 text-white" />
                     </div>
-                    <span className="text-white text-sm">Database Design</span>
+                    <span className="text-white text-sm">Backend</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                      <Database className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-white text-sm">Databases</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                      <Palette className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-white text-sm">UI/UX Design</span>
                   </div>
                 </div>
               </div>
