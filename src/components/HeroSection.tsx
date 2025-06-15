@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Globe, Linkedin, Github, Layers, Code, Server, Database, Palette } from 'lucide-react';
+import { Globe, Linkedin, Github, Layers, Code, Server, Database, Palette, Instagram } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -36,6 +35,9 @@ const HeroSection = () => {
               <a href="https://github.com/Paardhu22" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
                 <Github className="w-7 h-7" />
               </a>
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                <Instagram className="w-7 h-7" />
+              </a>
             </div>
 
             {/* Stats */}
@@ -59,7 +61,8 @@ const HeroSection = () => {
               </div>
               
               <div className="relative z-10">
-                <div className="text-white text-2xl font-bold mb-4">Creative Developer</div>
+                <div className="text-white text-2xl font-bold mb-2">Creative Developer</div>
+                <p className="text-white/80 text-sm mb-4">I bring ideas to life with code and design, creating beautiful and functional web experiences.</p>
                 <div className="w-32 h-32 bg-white/20 rounded-2xl mb-6 flex items-center justify-center">
                   <Layers className="w-16 h-16 text-white" />
                 </div>
