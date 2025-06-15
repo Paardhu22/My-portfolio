@@ -5,12 +5,10 @@ import AboutSection from '../components/AboutSection';
 import SkillsSection from '../components/SkillsSection';
 import PortfolioSection from '../components/PortfolioSection';
 import ContactSection from '../components/ContactSection';
-import DynamicBackground from '../components/DynamicBackground';
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <DynamicBackground />
+    <div className="min-h-screen bg-background">
       <HeroSection />
       <AboutSection />
       <SkillsSection />

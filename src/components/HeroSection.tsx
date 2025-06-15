@@ -4,7 +4,7 @@ import { Globe, Linkedin, Github, Layers, Code, Server, Database, Palette, Insta
 
 const HeroSection = () => {
   return (
-    <section id="home" className="min-h-screen pt-20 transition-colors duration-300">
+    <section id="home" className="min-h-screen bg-background pt-20 transition-colors duration-300 hover:bg-hover-background">
       <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
