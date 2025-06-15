@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe, Users, Clock } from 'lucide-react';
 
@@ -10,12 +9,10 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <h1 className="text-7xl lg:text-8xl font-black text-black leading-none">
-                visual
+              <h1 className="text-5xl lg:text-6xl font-black text-black leading-tight">
+                hi my name is <span className="text-orange-500">Paardhiv Reddy</span>
                 <br />
-                <span className="text-black">code</span>
-                <br />
-                <span className="text-black italic font-light">craft</span>
+                <span className="font-light text-black">and welcome to my portfolio</span>
               </h1>
               
               <p className="text-lg text-gray-600 max-w-lg leading-relaxed">
