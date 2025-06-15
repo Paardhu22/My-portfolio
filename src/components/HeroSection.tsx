@@ -9,19 +9,18 @@ const HeroSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <div className="space-y-4 relative">
-              <div className="absolute top-[-10rem] left-[-15rem] w-[45rem] h-[45rem] text-red-300 opacity-30 filter blur-3xl transform rotate-12 -z-10 pointer-events-none">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fill="currentColor"
-                    d="M49.4,-49.5C62.4,-34.2,70.1,-17.1,70.6,0.5C71.1,18.1,64.4,36.2,52.2,49.2C40,62.2,22.3,70.1,3.8,70.8C-14.7,71.5,-29.3,65,-43,54.7C-56.7,44.4,-69.5,30.3,-72.6,14C-75.7,-2.2,-69.1,-18.4,-59,-33.5C-48.9,-48.6,-35.2,-62.5,-20.3,-67.4C-5.3,-72.3,10.8,-67.7,24.9,-61.7C39,-55.7,51.1,-48.5,49.4,-49.5Z"
-                    transform="translate(100 100)"
-                  />
-                </svg>
-              </div>
-
               <h1 className="leading-tight">
                 <span className="block text-8xl lg:text-9xl font-black text-black">
-                  hi my name is <span className="text-orange-500">Paardhiv Reddy</span>
+                  hi my name is{' '}
+                  <span className="relative inline-block">
+                    <span className="relative z-10 text-orange-500">Paardhiv Reddy</span>
+                    <img
+                      src="/lovable-uploads/903c0db6-e82f-4f03-b4d5-ba6d1a6c3554.png"
+                      alt="background design"
+                      className="absolute inset-0 w-full h-full object-cover pointer-events-none mix-blend-lighten"
+                      style={{ transform: 'scale(1.3, 1.6) rotate(-3deg)' }}
+                    />
+                  </span>
                 </span>
                 <br />
                 <span className="font-light text-black text-3xl lg:text-4xl">
