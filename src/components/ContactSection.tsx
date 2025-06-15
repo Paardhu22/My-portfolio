@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { Mail, Phone, MapPin } from 'lucide-react';
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-20 bg-black text-white relative overflow-hidden">
+    <section id="contact" className="py-20 bg-black text-white relative overflow-hidden transition-colors duration-300 hover:bg-[#111]">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-20 w-32 h-32 border border-white/10 rounded-full"></div>

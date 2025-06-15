@@ -28,7 +28,7 @@ const PortfolioSection = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
+    <section id="portfolio" className="py-20 bg-background transition-colors duration-300 hover:bg-muted">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-6xl lg:text-7xl font-black text-foreground mb-6">
