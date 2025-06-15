@@ -24,7 +24,7 @@ const AboutSection = () => {
 
             <div className="space-y-6 text-center">
               <h3 
-                className="text-4xl font-bold text-foreground mb-6 animate-fade-in" 
+                className="text-5xl font-bold text-foreground mb-6 animate-fade-in animate-pulse-scale" 
                 style={{ animationDelay: '200ms', opacity: 0 }}
               >
                 What I Do
