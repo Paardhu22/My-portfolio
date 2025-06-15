@@ -15,7 +15,7 @@ const PortfolioSection = () => {
       title: 'Interactive Framer Prototype',
       description: 'A dynamic and responsive prototype showcasing fluid animations and user interactions.',
       tags: ['Framer', 'Prototyping', 'UI/UX', 'Design'],
-      image: 'https://images.unsplash.com/photo-1604933241469-63d12d1b544b?w=600&h=400&fit=crop',
+      image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop',
       link: 'https://possible-oval-692489.framer.app',
     },
     {
