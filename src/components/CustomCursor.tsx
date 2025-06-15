@@ -1,10 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+```tsx
+import React, { useState, useEffect, useRef } from 'react';
 
 const CustomCursor = () => {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [isHovering, setIsHovering] = useState(false);
   const [isPointerDevice, setIsPointerDevice] = useState(false);
+  const followerRef = useRef<HTMLDivElement>(null);
+
+  const mousePos = useRef({ x: -100, y: -100 });
+  const followerPos = useRef({ x: -100, y: -100 });
+
+  const rafId = useRef<number | null>(null);
 
   useEffect(() => {
     const hasPointerDevice = window.matchMedia('(pointer: fine)').matches;
@@ -12,37 +17,34 @@ const CustomCursor = () => {
 
     if (!hasPointerDevice) return;
 
-    document.body.style.cursor = 'none';
-
     const onMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
+      mousePos.current = { x: e.clientX, y: e.clientY };
     };
-
-    const onMouseEnter = () => setIsHovering(true);
-    const onMouseLeave = () => setIsHovering(false);
 
     document.addEventListener('mousemove', onMouseMove);
 
-    const interactiveElements = document.querySelectorAll(
-      'a, button, [role="button"], input, textarea, select, .group'
-    );
+    const animateFollower = () => {
+      const { x: mouseX, y: mouseY } = mousePos.current;
+      const { x: followerX, y: followerY } = followerPos.current;
 
-    interactiveElements.forEach((el) => {
-      el.addEventListener('mouseenter', onMouseEnter);
-      el.addEventListener('mouseleave', onMouseLeave);
-      (el as HTMLElement).style.cursor = 'none';
-    });
+      // Create a lagging effect
+      followerPos.current.x += (mouseX - followerX) * 0.1;
+      followerPos.current.y += (mouseY - followerY) * 0.1;
+
+      if (followerRef.current) {
+        followerRef.current.style.transform = `translate3d(${followerPos.current.x}px, ${followerPos.current.y}px, 0) translate(-50%, -50%)`;
+      }
+
+      rafId.current = requestAnimationFrame(animateFollower);
+    };
+
+    animateFollower();
 
     return () => {
-      document.body.style.cursor = 'auto';
       document.removeEventListener('mousemove', onMouseMove);
-      interactiveElements.forEach((el) => {
-        el.removeEventListener('mouseenter', onMouseEnter);
-        el.removeEventListener('mouseleave', onMouseLeave);
-        if (el) {
-          (el as HTMLElement).style.cursor = 'auto';
-        }
-      });
+      if (rafId.current) {
+        cancelAnimationFrame(rafId.current);
+      }
     };
   }, []);
 
@@ -52,24 +54,14 @@ const CustomCursor = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 pointer-events-none z-[9999]"
+      ref={followerRef}
+      className="fixed top-0 left-0 pointer-events-none z-[9999] w-32 h-32 rounded-full bg-orange-500/20 blur-3xl"
       style={{
-        transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
+        transform: 'translate3d(-100px, -100px, 0) translate(-50%, -50%)',
       }}
-    >
-      <div
-        className={`w-8 h-8 rounded-full border-2 transition-all duration-300 ease-in-out ${
-          isHovering ? 'border-orange-500 scale-150 bg-orange-500/20' : 'border-white scale-100'
-        }`}
-        style={{
-          transform: 'translate(-50%, -50%)',
-        }}
-      />
-      <div
-        className={`w-1 h-1 bg-white rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 ${isHovering ? 'opacity-0' : 'opacity-100'}`}
-      />
-    </div>
+    />
   );
 };
 
 export default CustomCursor;
+```
