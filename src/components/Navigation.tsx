@@ -18,10 +18,6 @@ const Navigation = () => {
             <a href="#skills" className="text-black hover:text-orange-500 transition-colors font-medium">Skills</a>
             <a href="#contact" className="text-black hover:text-orange-500 transition-colors font-medium">Contact</a>
           </div>
-
-          <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-medium">
-            Available for hire 🔥
-          </div>
         </div>
       </div>
     </nav>
@@ -29,3 +25,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+
