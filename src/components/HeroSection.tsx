@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { Globe, Users, Clock } from 'lucide-react';
+import { Globe, Users, Clock, Linkedin, Github } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -27,7 +28,15 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Removed Social Links */}
+            {/* Social Links */}
+            <div className="flex items-center space-x-6">
+              <a href="https://www.linkedin.com/in/paardhiv-reddy-tumma" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                <Linkedin className="w-7 h-7" />
+              </a>
+              <a href="https://github.com/Paardhu22" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="text-muted-foreground hover:text-orange-500 transition-colors">
+                <Github className="w-7 h-7" />
+              </a>
+            </div>
 
             {/* Stats */}
             <div className="flex space-x-12">
@@ -50,7 +59,7 @@ const HeroSection = () => {
               </div>
               
               <div className="relative z-10">
-                <div className="text-white text-2xl font-bold mb-4">Full Stack</div>
+                <div className="text-white text-2xl font-bold mb-4">Creative Developer</div>
                 <div className="w-32 h-32 bg-white/20 rounded-2xl mb-6 flex items-center justify-center">
                   <div className="text-6xl">💻</div>
                 </div>
