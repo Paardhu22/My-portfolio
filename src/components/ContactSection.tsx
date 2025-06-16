@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 
 const ContactSection = () => {
   return (
@@ -34,21 +34,32 @@ const ContactSection = () => {
             </div>
 
             <div className="space-y-6">
-              {[
-                { icon: <Mail className="w-6 h-6" />, label: 'Email', value: 'paardhivreddy22@gmail.com' },
-                { icon: <Phone className="w-6 h-6" />, label: 'Phone', value: '9493541929' },
-                { icon: <MapPin className="w-6 h-6" />, label: 'Location', value: 'hyd' }
-              ].map((item, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="text-gray-400 text-sm">{item.label}</div>
-                    <div className="text-white font-medium">{item.value}</div>
-                  </div>
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                  <Mail className="w-6 h-6" />
                 </div>
-              ))}
+                <div>
+                  <div className="text-gray-400 text-sm">Email</div>
+                  <a 
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=paardhivreddy22@gmail.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white font-medium hover:text-orange-500 transition-colors duration-200"
+                  >
+                    paardhivreddy22@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                  <MapPin className="w-6 h-6" />
+                </div>
+                <div>
+                  <div className="text-gray-400 text-sm">Location</div>
+                  <div className="text-white font-medium">Hyderabad, India</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
