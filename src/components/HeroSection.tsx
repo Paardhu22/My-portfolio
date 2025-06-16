@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Globe, Linkedin, Github, Layers, Code, Server, Database, Palette, Instagram } from 'lucide-react';
 
@@ -12,7 +11,7 @@ const HeroSection = () => {
             <div className="space-y-4 relative">
               <h1 className="leading-tight">
                 <span className="block text-8xl lg:text-9xl font-black text-foreground opacity-0 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                  hi my name is{' '}
+                  Hi My Name Is{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-500 animate-text-gradient bg-[200%_auto]">Paardhiv Reddy</span>
                 </span>
                 <br />
